@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTML Form Example</title>
+    </title>
+</head>
+<body>
+    <form action="https://learn.nucamp.co/show_everything.php" method="post">
+        <!-- Single Checkbox input -->
+        
+        <div>
+            Delivery? <input type="checkbox" name="delivery" />
+        </div>
+
+        <!-- Group of Myltiple Checkbox inputs -->
+        <div>
+            Milk <input type="checkbox" name="groceries" value="milk" />
+            Eggs <input type="checkbox" name="groceries" value="eggs" />
+            Bread <input type="checkbox" name="groceries" value="bread" />
+        </div>
+
+        <!-- Group of Multiple Radio inputs -->
+        <div>
+            Pay by Cash <input type="radio" name="payment" value="cash" required />
+            Pay by Check <input type="radio" name="payment" value="check" />
+        </div>
+
+        <input type="submit" value="Go" />
+    </form>
+</body>
+</html>

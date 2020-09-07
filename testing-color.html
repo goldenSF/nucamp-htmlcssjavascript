@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>Color Guessing Game</title>
+    </head>
+​
+    <body>
+        <h1>Color Guessing Game</h1>
+        <button type="button" onclick="runGame()">Start Game</button>
+​
+        <script>
+            const COLORS_ARRAY = ['blue','cyan','gold','gray','green','magneta','orange','red','white','yellow'];
+​
+            function runGame(){
+                let guess = '';
+                let correct = false;
+                let numTries = 0;
+                let last = COLORS_ARRAY[COLORS_ARRAY - 1];
+​
+                const targetIndex = Math.floor(Math.random() * COLORS_ARRAY.length);
+                const target = COLORS_ARRAY[targetIndex];
+​
+                console.log(target);
+​
+                do{
+                    guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY + '\n\nWhat color am I thinking of?\n\n');
+                    if(guess === null) {
+                        alert('Game is aborted');
+                        return;
+                    } 
+                    
+                    correct = checkGuess(guess, target);
+                    numTries++
+                } while (!correct);
+                
+                alert('Congratulations! You are correct.\nIt took you' + numTries + ' guess to get the correct color.\n\nHit OK to see the color in the background.' );
+​
+                document.body.style.background = guess;
+                
+            }
+​
+​
+            function checkGuess(guess, target) {
+                let correct = false;
+                if(!COLORS_ARRAY.includes(guess.toLowerCase())) {
+                    alert("Sorry! I don't recognize your color!");
+                } else if(guess > target) {
+                    alert("Your number is too high.");
+                } else if(guess < target) {
+                    alert("Your number is too low");
+                } else {
+                    correct = true;
+                    }
+                    console.log(correct)
+                return correct;
+            }
+​
+        </script>
+    </body>
+​
+</html>
+
+
+
